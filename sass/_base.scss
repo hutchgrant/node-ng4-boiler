@@ -1,0 +1,26 @@
+$screen-sm:992px;
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+// Necessities
+@import 'colors';
+@import 'fonts';
+@import 'forms';
+@import 'navigation';
+@import 'footer';
+
+// Custom Pages
+@import 'login';
+
+body{
+    background-color:white;
+}
+#divider {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    background-image: linear-gradient(to right, transparent, $color-base, transparent);
+    width: 75%;
+    height: 1px;
+}

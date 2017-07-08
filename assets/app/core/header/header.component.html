@@ -1,0 +1,48 @@
+<header>
+  <nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" (click)="toggleMobile()">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Brand</a>
+      </div>
+      
+      <div class="collapse navbar-collapse" [ngClass]="{ 'in': isMobile }">
+        <ul class="nav navbar-nav">
+          <!-- Your Page Links Here -->
+         <!--<li routerLinkActive="active"><a routerLink="#">Link <span class="sr-only">(current)</span></a></li>-->
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown" appDropdown>
+            <ng-template [ngIf]="!isLoggedIn">
+              <a style="cursor: pointer;"class="dropdown-toggle" role="button">Account <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a routerLink="/auth/signin">Login</a></li>
+                <li><a routerLink="/auth/signup">Sign Up</a></li>
+              </ul>
+            </ng-template>
+            <ng-template [ngIf]="isLoggedIn">
+              <a style="cursor: pointer;"class="dropdown-toggle" role="button">{{user.firstName}} <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a routerLink="/dashboard">Dashboard</a></li>
+                <li><a routerLink="/auth/logout">Logout</a></li>
+              </ul>
+            </ng-template>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<ng-template [ngIf]="!full">
+  <div class="jumbotron text-center">
+    <h1>Node Angular 4 Boilerplate</h1>
+    <p>Mongo, Express, Angular 4, Node, Sass, Bootstrap, Webpack, Basic Authentication</p>
+    <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+  </div>
+</ng-template>
