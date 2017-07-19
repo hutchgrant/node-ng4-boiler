@@ -1,5 +1,5 @@
 # node-ng4-boiler
-Angular 4, NodeJS, Express, Mongo, Sass, Bootstrap, boilerplate with basic user authentication
+Angular 4, NodeJS, Express, Mongo, [@ngrx/store](https://github.com/ngrx/platform), Sass, Bootstrap, boilerplate with basic user authentication
 
 <img src="./screenshots/screen_0.png" width="640px">
 

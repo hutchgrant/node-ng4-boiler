@@ -16,12 +16,8 @@ export class SigninComponent {
         const user = new User(this.myForm.value.email, this.myForm.value.password);
         this.authService.signin(user)
             .subscribe(
-                data => {
-                    localStorage.setItem('token', data.token);
-                    localStorage.setItem('userId', data.userId);
-                    localStorage.setItem('firstName', data.firstName);
-                    localStorage.setItem('lastName', data.lastName);
-                    this.router.navigateByUrl('/');
+                () => {
+                    this.router.navigateByUrl('/dashboard');
                 },
                 error => console.error(error)  
             );
@@ -34,7 +30,7 @@ export class SigninComponent {
                 Validators.required,
                 Validators.pattern("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")
             ]),
-            password: new FormControl(null, Validators.required),
+            password: new FormControl(null, Validators.required)
         });
     }    
 }

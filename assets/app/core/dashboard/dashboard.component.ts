@@ -11,8 +11,14 @@ import { User } from '../../auth/user.model';
 export class DashboardComponent implements OnInit {
     user = new User();
 
-    constructor(private authService: AuthService) {}
+    constructor(private authService: AuthService) {
+      this.authService.getUser()
+      .subscribe(user => {
+            this.user = user;
+      });
+    }
+
     ngOnInit() {
-      this.user = this.authService.getUser();
+
     }
 }
